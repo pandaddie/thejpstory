@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-icon.png",
   },
 
   openGraph: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "The JP Story",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "The JP Story | Paul & Jozzy",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "The JP Story | Paul & Jozzy",
     description:
       "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image.png"],
   },
 };
 
