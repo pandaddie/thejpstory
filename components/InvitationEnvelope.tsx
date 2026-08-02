@@ -14,7 +14,8 @@ export default function InvitationEnvelope() {
   const [opening, setOpening] = useState(false);
   const [revealingHero, setRevealingHero] = useState(false);
 
-  // Browser timers return numbers
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const revealTimerRef = useRef<number | null>(null);
   const removeTimerRef = useRef<number | null>(null);
 
@@ -39,13 +40,38 @@ export default function InvitationEnvelope() {
       if (removeTimerRef.current !== null) {
         window.clearTimeout(removeTimerRef.current);
       }
+
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
     };
   }, []);
 
-  function openInvitation() {
+  async function startMusic() {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/music/our-song.mp3");
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.25;
+      audioRef.current.preload = "auto";
+    }
+
+    try {
+      // Start at 0.08 seconds
+      audioRef.current.currentTime = 0.08;
+
+      await audioRef.current.play();
+    } catch (error) {
+      console.error("Unable to start music:", error);
+    }
+  }
+
+  async function openInvitation() {
     if (opening) return;
 
     setOpening(true);
+
+    // Start the music immediately after the click
+    await startMusic();
 
     revealTimerRef.current = window.setTimeout(() => {
       document.getElementById("home")?.scrollIntoView({
