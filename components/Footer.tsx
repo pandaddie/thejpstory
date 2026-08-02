@@ -6,7 +6,7 @@ export default function Footer() {
         textAlign: "center",
       }}
     >
-      Paul & Jozzy © 2026
+      Paul & Jozzy © 2026 Made with love 🤍
     </footer>
   );
 }
