@@ -1,31 +1,40 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const bodyFont = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Paul & Jozzy | By Design",
-  description: "The official wedding website of Paul Quartey and Jozzy Owusu.",
-  metadataBase: new URL("https://thejpstory.com"),
+  title: "The JP Story | Paul & Jozzy",
+
+  description:
+    "Join us as we celebrate our wedding. Find ceremony details, RSVP, registry information, accommodations, and everything you need for our special day.",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
   openGraph: {
-    title: "Paul & Jozzy | By Design",
-    description: "Celebrate the wedding of Paul Quartey and Jozzy Owusu.",
+    title: "The JP Story | Paul & Jozzy",
+    description: "Join us as we celebrate our wedding journey.",
     url: "https://thejpstory.com",
-    siteName: "Paul & Jozzy",
+    siteName: "The JP Story",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Paul & Jozzy Wedding",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "The JP Story | Paul & Jozzy",
+    description: "Join us as we celebrate our wedding journey.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -35,13 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${headingFont.variable} ${bodyFont.variable}`}
-        suppressHydrationWarning
-      >
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
