@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   title: "The JP Story | Paul & Jozzy",
 
   description:
-    "Join us as we celebrate our wedding. Find ceremony details, RSVP, registry information, accommodations, and everything you need for our special day.",
+    "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
+
+  metadataBase: new URL("https://thejpstory.com"),
 
   icons: {
     icon: "/favicon.ico",
@@ -15,15 +17,16 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "The JP Story | Paul & Jozzy",
-    description: "Join us as we celebrate our wedding journey.",
+    description:
+      "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
     url: "https://thejpstory.com",
     siteName: "The JP Story",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Paul & Jozzy Wedding",
+        alt: "The JP Story | Paul & Jozzy",
       },
     ],
     locale: "en_US",
@@ -33,8 +36,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The JP Story | Paul & Jozzy",
-    description: "Join us as we celebrate our wedding journey.",
-    images: ["/og-image.jpg"],
+    description:
+      "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
+    images: ["/og-image.png"],
   },
 };
 
