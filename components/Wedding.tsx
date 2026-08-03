@@ -15,8 +15,7 @@ const weddingEvents = [
     title: "Wedding Ceremony",
     time: "1:30 PM",
     venue: "Shanah City",
-    address: "380 South Potomac Street, Aurora, CO 80012",
-    note: "Adults Only! We kindly request an adults-only celebration. Thank you for your understanding.",
+    address: "380 South Potomac Street, Aurora, CO 80012, Unit 120",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=380+South+Potomac+Street+Aurora+CO+80012",
   },
@@ -50,7 +49,7 @@ export default function Wedding() {
             We Invite You
           </h2>
 
-          <p className="wedding-introduction">To Celebrate with us...</p>
+          <p className="wedding-introduction">To celebrate with us...</p>
         </motion.header>
 
         <motion.div
@@ -95,7 +94,6 @@ export default function Wedding() {
 
                 <div className="wedding-event-detail">
                   <Clock3 size={18} strokeWidth={1.5} />
-
                   <span>{event.time}</span>
                 </div>
 
@@ -105,6 +103,19 @@ export default function Wedding() {
                   <div>
                     <strong>{event.venue}</strong>
                     <span>{event.address}</span>
+
+                    {index === 1 && (
+                      <span
+                        style={{
+                          marginTop: "0.55rem",
+                          color: "var(--gold-light)",
+                          fontStyle: "italic",
+                          opacity: 0.9,
+                        }}
+                      >
+                        Adults Only, respectfully.
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -135,7 +146,8 @@ export default function Wedding() {
 
           <div>
             <span>Dress Code</span>
-            <h3>Formal & Glamorous</h3>
+            <h3>Formal &amp; Glamorous</h3>
+
             <p>
               We invite our guests to celebrate with us in refined, fabulous
               attire, befitting the elegance of this special occasion.
