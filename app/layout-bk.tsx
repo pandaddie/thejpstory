@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { MusicProvider } from "@/components/MusicProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -50,9 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <MusicProvider>{children}</MusicProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

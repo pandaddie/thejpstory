@@ -414,11 +414,24 @@ section {
 .hero-scroll span {
   display: block;
 
-  width: 1px;
+  width: 3px;
 
   height: 60px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 227, 170, 0.2),
+    var(--gold-light),
+    var(--gold),
+    var(--gold-light),
+    rgba(247, 227, 170, 0.2)
+  );
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 8px rgba(212, 175, 55, 0.45),
+    0 0 18px rgba(212, 175, 55, 0.25);
 
   margin: auto auto 15px;
 
@@ -680,8 +693,16 @@ section {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.5), transparent 34%),
-    radial-gradient(circle at 85% 75%, rgba(200, 169, 126, 0.16), transparent 30%),
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.5),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(200, 169, 126, 0.16),
+      transparent 30%
+    ),
     linear-gradient(180deg, #eadfce 0%, #f1e8dc 50%, #eee3d5 100%);
 }
 
@@ -5857,4 +5878,3 @@ textarea {
     width: 100%;
   }
 }
-

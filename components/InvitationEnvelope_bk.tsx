@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useMusic } from "./MusicProvider";
 import styles from "./InvitationEnvelope.module.css";
 
 const STORAGE_KEY = "pj-invitation-opened";
@@ -15,7 +14,7 @@ export default function InvitationEnvelope() {
   const [opening, setOpening] = useState(false);
   const [revealingHero, setRevealingHero] = useState(false);
 
-  const { startMusic } = useMusic();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const revealTimerRef = useRef<number | null>(null);
   const removeTimerRef = useRef<number | null>(null);
@@ -24,10 +23,7 @@ export default function InvitationEnvelope() {
     const alreadyOpened = sessionStorage.getItem(STORAGE_KEY) === "true";
 
     if (alreadyOpened) {
-      queueMicrotask(() => {
-        setVisible(false);
-      });
-
+      setVisible(false);
       document.body.style.overflow = "";
       return;
     }
@@ -44,14 +40,37 @@ export default function InvitationEnvelope() {
       if (removeTimerRef.current !== null) {
         window.clearTimeout(removeTimerRef.current);
       }
+
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
     };
   }, []);
+
+  async function startMusic() {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/music/our-song.mp3");
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.25;
+      audioRef.current.preload = "auto";
+    }
+
+    try {
+      // Start at 0.08 seconds
+      audioRef.current.currentTime = 0.08;
+
+      await audioRef.current.play();
+    } catch (error) {
+      console.error("Unable to start music:", error);
+    }
+  }
 
   async function openInvitation() {
     if (opening) return;
 
     setOpening(true);
 
+    // Start the music immediately after the click
     await startMusic();
 
     revealTimerRef.current = window.setTimeout(() => {
