@@ -27,7 +27,7 @@ const weddingEvents = [
     time: "4:00 PM",
     venue: "DoubleTree by Hilton Hotel Denver",
     address: "3203 Quebec St, Denver, CO 80207",
-    note: "{event.note}",
+    note: "Adults Only, respectfully.",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=3203+Quebec+St+Denver+CO+80207",
   },
@@ -118,17 +118,8 @@ export default function Wedding() {
                     <strong>{event.venue}</strong>
                     <span>{event.address}</span>
 
-                    {index === 1 && (
-                      <span
-                        style={{
-                          marginTop: "0.55rem",
-                          color: "var(--gold-light)",
-                          fontStyle: "italic",
-                          opacity: 0.9,
-                        }}
-                      >
-                        {event.note}
-                      </span>
+                    {event.note && (
+                      <span className="wedding-event-note">{event.note}</span>
                     )}
                   </div>
                 </div>
@@ -139,8 +130,10 @@ export default function Wedding() {
                       <Clock3 size={18} strokeWidth={1.5} />
                       <span>{event.secondaryTime}</span>
                     </div>
+
                     <div className="wedding-event-detail wedding-event-location">
                       <MapPin size={18} strokeWidth={1.5} />
+
                       <div>
                         <strong>{event.secondaryTitle}</strong>
                         <span>{event.secondaryNote}</span>

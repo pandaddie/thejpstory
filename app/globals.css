@@ -680,16 +680,8 @@ section {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(255, 255, 255, 0.5),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 85% 75%,
-      rgba(200, 169, 126, 0.16),
-      transparent 30%
-    ),
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.5), transparent 34%),
+    radial-gradient(circle at 85% 75%, rgba(200, 169, 126, 0.16), transparent 30%),
     linear-gradient(180deg, #eadfce 0%, #f1e8dc 50%, #eee3d5 100%);
 }
 
@@ -699,7 +691,6 @@ section {
   top: 50%;
   right: -2rem;
   transform: translateY(-50%) rotate(90deg);
-
   font-family: var(--font-heading);
   font-size: clamp(7rem, 15vw, 14rem);
   color: rgba(183, 155, 108, 0.08);
@@ -710,7 +701,6 @@ section {
 .wedding-container {
   position: relative;
   z-index: 2;
-
   width: min(100%, var(--max-width));
   margin-inline: auto;
 }
@@ -724,7 +714,6 @@ section {
 .wedding-introduction {
   max-width: 660px;
   margin: 0 auto;
-
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.9;
@@ -734,17 +723,14 @@ section {
   max-width: 850px;
   margin: 0 auto 90px;
   padding: 65px 40px;
-
   border-top: 1px solid rgba(152, 125, 77, 0.4);
   border-bottom: 1px solid rgba(152, 125, 77, 0.4);
-
   text-align: center;
 }
 
 .wedding-date-day {
   display: block;
   margin-bottom: 18px;
-
   color: var(--gold-dark);
   font-size: 0.75rem;
   font-weight: 500;
@@ -774,7 +760,6 @@ section {
 
 .wedding-date-panel > p {
   margin: 25px 0 0;
-
   color: var(--muted);
   font-size: 0.72rem;
   letter-spacing: 0.32rem;
@@ -785,51 +770,23 @@ section {
   display: grid;
   grid-template-columns: repeat(3, minmax(320px, 1fr));
   gap: 28px;
-
   border-top: 1px solid rgba(152, 125, 77, 0.35);
   border-bottom: 1px solid rgba(152, 125, 77, 0.35);
 }
 
 .wedding-event {
   position: relative;
-
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 22px;
-
   min-width: 0;
   padding: clamp(42px, 4vw, 58px);
-}
-
-.wedding-event h3 {
-  max-width: none;
-  font-size: clamp(2.2rem, 3.2vw, 3.35rem);
-  line-height: 1.08;
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
-@media (max-width: 1180px) {
-  .wedding-events {
-    grid-template-columns: 1fr;
-  }
-}
-
-.wedding-event-note {
-  margin: 8px 0 0;
-  color: var(--gold);
-  font-size: 0.82rem;
-  font-style: italic;
-  line-height: 1.5;
-}
-
-.wedding-event:first-child {
-  border-right: 1px solid rgba(152, 125, 77, 0.35);
+  border: 1px solid rgba(152, 125, 77, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .wedding-event-number {
   padding-top: 8px;
-
   color: var(--gold-dark);
   font-family: var(--font-heading);
   font-size: 1.05rem;
@@ -838,7 +795,6 @@ section {
 
 .wedding-event-label {
   margin: 0 0 14px;
-
   color: var(--gold-dark);
   font-size: 0.68rem;
   letter-spacing: 0.3rem;
@@ -846,22 +802,21 @@ section {
 }
 
 .wedding-event h3 {
-  max-width: 420px;
+  max-width: none;
   margin: 0 0 38px;
-
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  font-size: clamp(2.2rem, 3.2vw, 3.35rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.08;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .wedding-event-detail {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-
   margin-bottom: 22px;
-
   color: var(--text);
   line-height: 1.7;
 }
@@ -888,22 +843,29 @@ section {
   font-size: 0.9rem;
 }
 
+.wedding-event-location .wedding-event-note {
+  display: block;
+  margin-top: 0.7rem;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
 .wedding-map-link {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-
   margin-top: 15px;
   padding-bottom: 6px;
-
   border-bottom: 1px solid var(--gold-dark);
-
   color: var(--gold-dark);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-
   transition: var(--transition);
 }
 
@@ -915,14 +877,11 @@ section {
 .wedding-dress-code {
   max-width: 760px;
   margin: 90px auto 45px;
-
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: flex-start;
   gap: 30px;
-
   padding: 45px;
-
   background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(183, 155, 108, 0.35);
 }
@@ -930,20 +889,16 @@ section {
 .wedding-dress-icon {
   width: 58px;
   height: 58px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--gold);
   border-radius: 50%;
-
   color: var(--gold-dark);
 }
 
 .wedding-dress-code span {
   display: block;
   margin-bottom: 8px;
-
   color: var(--gold-dark);
   font-size: 0.7rem;
   letter-spacing: 0.28rem;
@@ -952,7 +907,6 @@ section {
 
 .wedding-dress-code h3 {
   margin: 0 0 10px;
-
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 400;
@@ -960,7 +914,6 @@ section {
 
 .wedding-dress-code p {
   margin: 0;
-
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.8;
@@ -969,23 +922,18 @@ section {
 .wedding-calendar-button {
   width: fit-content;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-
   padding: 16px 28px;
-
   border: 1px solid var(--gold-dark);
   border-radius: 999px;
-
   color: var(--gold-dark);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-
   transition: var(--transition);
 }
 
@@ -995,14 +943,9 @@ section {
   transform: translateY(-2px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .wedding-events {
     grid-template-columns: 1fr;
-  }
-
-  .wedding-event:first-child {
-    border-right: 0;
-    border-bottom: 1px solid rgba(152, 125, 77, 0.35);
   }
 }
 
@@ -1031,7 +974,7 @@ section {
   .wedding-event {
     grid-template-columns: 1fr;
     gap: 12px;
-    padding: 50px 10px;
+    padding: 50px 18px;
   }
 
   .wedding-event-number {
