@@ -159,7 +159,7 @@ export default function RSVP() {
           </h2>
 
           <p>
-            We would be honoured to celebrate with you. Kindly complete the form
+            We would be honored to celebrate with you. Kindly complete the form
             below to let us know if you&apos;ll be joining us. We can&apos;t
             wait to welcome you on our special day.
           </p>
