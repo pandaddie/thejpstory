@@ -5878,3 +5878,9 @@ textarea {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-scroll span {
+    width: 3px;
+  }
+}
