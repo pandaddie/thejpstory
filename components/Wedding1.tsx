@@ -12,7 +12,6 @@ import {
 const weddingEvents = [
   {
     number: "01",
-    label: "The Covenant",
     title: "Wedding Ceremony",
     time: "1:30 PM",
     venue: "Shanah City",
@@ -22,27 +21,12 @@ const weddingEvents = [
   },
   {
     number: "02",
-    label: "The Celebration",
     title: "Wedding Reception",
     time: "4:00 PM",
     venue: "DoubleTree by Hilton Hotel Denver",
     address: "3203 Quebec St, Denver, CO 80207",
-    note: "{event.note}",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=3203+Quebec+St+Denver+CO+80207",
-  },
-  {
-    number: "03",
-    label: "The Thanksgiving",
-    title: "Thanksgiving Service",
-    time: "10:00 AM",
-    venue: "Shanah City",
-    address: "380 South Potomac Street, Aurora, CO 80012, Unit 120",
-    secondaryTime: "2:00 PM",
-    secondaryTitle: "Lunch",
-    secondaryNote: "More details to follow.",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=380+South+Potomac+Street+Aurora+CO+80012",
   },
 ];
 
@@ -102,7 +86,9 @@ export default function Wedding() {
               <span className="wedding-event-number">{event.number}</span>
 
               <div className="wedding-event-content">
-                <p className="wedding-event-label">{event.label}</p>
+                <p className="wedding-event-label">
+                  {index === 0 ? "The Covenant" : "The Celebration"}
+                </p>
 
                 <h3>{event.title}</h3>
 
@@ -127,27 +113,11 @@ export default function Wedding() {
                           opacity: 0.9,
                         }}
                       >
-                        {event.note}
+                        Adults Only, respectfully.
                       </span>
                     )}
                   </div>
                 </div>
-
-                {event.secondaryTime && (
-                  <>
-                    <div className="wedding-event-detail">
-                      <Clock3 size={18} strokeWidth={1.5} />
-                      <span>{event.secondaryTime}</span>
-                    </div>
-                    <div className="wedding-event-detail wedding-event-location">
-                      <MapPin size={18} strokeWidth={1.5} />
-                      <div>
-                        <strong>{event.secondaryTitle}</strong>
-                        <span>{event.secondaryNote}</span>
-                      </div>
-                    </div>
-                  </>
-                )}
 
                 <a
                   href={event.mapUrl}

@@ -783,7 +783,8 @@ section {
 
 .wedding-events {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  gap: 28px;
 
   border-top: 1px solid rgba(152, 125, 77, 0.35);
   border-bottom: 1px solid rgba(152, 125, 77, 0.35);
@@ -793,10 +794,33 @@ section {
   position: relative;
 
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 28px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 22px;
 
-  padding: clamp(45px, 6vw, 80px);
+  min-width: 0;
+  padding: clamp(42px, 4vw, 58px);
+}
+
+.wedding-event h3 {
+  max-width: none;
+  font-size: clamp(2.2rem, 3.2vw, 3.35rem);
+  line-height: 1.08;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+@media (max-width: 1180px) {
+  .wedding-events {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wedding-event-note {
+  margin: 8px 0 0;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.5;
 }
 
 .wedding-event:first-child {
