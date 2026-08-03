@@ -8,6 +8,7 @@ const navigation = [
   { label: "Home", href: "#home" },
   { label: "Our Story", href: "#story" },
   { label: "The Wedding", href: "#wedding" },
+  { label: "Accommodation", href: "#accommodation" },
   { label: "Registry", href: "#registry" },
   { label: "RSVP", href: "#rsvp" },
   { label: "FAQs", href: "#faqs" },
