@@ -33,10 +33,10 @@ function buildCalendarFile() {
     "PRODID:-//PJ Forever//Wedding//EN",
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
-    "UID:paul-jozzy-wedding-20261010@pjforever.com",
+    "UID:paul-jozzy-wedding-20261003@thejpstory.com",
     "DTSTAMP:20260729T000000Z",
-    "DTSTART;VALUE=DATE:20261010",
-    "DTEND;VALUE=DATE:20261011",
+    "DTSTART;VALUE=DATE:20261003",
+    "DTEND;VALUE=DATE:20261003",
     "SUMMARY:Paul & Jozzy's Wedding",
     "DESCRIPTION:Join Paul and Jozzy as they celebrate their wedding day.",
     "END:VEVENT",
@@ -264,7 +264,7 @@ export default function RSVP() {
                 <Heart size={17} fill="currentColor" />
                 <span>With love,</span>
                 <strong>Paul &amp; Jozzy</strong>
-                <small>October 10, 2026</small>
+                <small>October 03, 2026</small>
               </div>
 
               <blockquote>

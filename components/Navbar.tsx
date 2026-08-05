@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,9 +8,9 @@ const navigation = [
   { label: "Home", href: "#home" },
   { label: "Our Story", href: "#story" },
   { label: "The Wedding", href: "#wedding" },
-  { label: "Accommodation", href: "#accommodation" },
   { label: "Registry", href: "#registry" },
   { label: "RSVP", href: "#rsvp" },
+  { label: "Accommodation", href: "#accommodation" },
   { label: "FAQs", href: "#faqs" },
 ];
 
@@ -32,13 +32,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      return;
+    }
 
-    document.body.style.overflow = menuOpen ? "hidden" : previousOverflow;
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   }, [menuOpen]);
 
   useEffect(() => {
@@ -52,11 +53,36 @@ export default function Navbar() {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, []);
 
-  function closeMenu() {
+  function handleNavigation(
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    event.preventDefault();
+
+    const targetId = href.slice(1);
+
     setMenuOpen(false);
+
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+
+    window.setTimeout(() => {
+      const target = document.getElementById(targetId);
+
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      window.history.replaceState(null, "", href);
+    }, 160);
   }
 
   return (
@@ -73,7 +99,7 @@ export default function Navbar() {
         <Link
           href="#home"
           className="navbar-logo"
-          onClick={closeMenu}
+          onClick={(event) => handleNavigation(event, "#home")}
           aria-label="Paul and Jozzy - Home"
         >
           <span className="navbar-logo-glow" aria-hidden="true" />
@@ -90,7 +116,11 @@ export default function Navbar() {
 
         <nav className="navbar-desktop" aria-label="Main navigation">
           {navigation.map((item) => (
-            <Link key={item.label} href={item.href}>
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={(event) => handleNavigation(event, item.href)}
+            >
               {item.label}
             </Link>
           ))}
@@ -128,7 +158,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              onClick={closeMenu}
+              onClick={(event) => handleNavigation(event, item.href)}
               style={{
                 transitionDelay: menuOpen ? `${120 + index * 70}ms` : "0ms",
               }}
