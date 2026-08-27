@@ -2,6 +2,7 @@ import InvitationEnvelope from "@/components/InvitationEnvelope";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
+import Traditional from "@/components/Traditional";
 import Wedding from "@/components/Wedding";
 import Registry from "@/components/Registry";
 import RSVP from "@/components/RSVP";
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <Story />
+        <Traditional />
         <Wedding />
         <Registry />
         <RSVP />
