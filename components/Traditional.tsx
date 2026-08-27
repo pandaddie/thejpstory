@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   CalendarDays,
@@ -20,132 +19,121 @@ export default function Traditional() {
   return (
     <section id="traditional" className="wedding traditional">
       <div className="wedding-container">
-        <div className="traditional-layout">
+        <motion.header
+          className="wedding-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <span className="section-tag">The Traditional</span>
+          <h2 className="section-title">Joining Our Families</h2>
+          <p className="wedding-introduction">
+            A celebration of love, and the joining of our families.
+          </p>
+        </motion.header>
+
+        <motion.div
+          className="wedding-date-panel"
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <span className="wedding-date-day">Friday</span>
+          <div className="wedding-date-display">
+            <span>October</span>
+            <strong>02</strong>
+            <span>2026</span>
+          </div>
+          <p>Aurora, Colorado</p>
+        </motion.div>
+
+        <div className="wedding-events traditional-events">
           <motion.article
-            className="wedding-event traditional-main-card"
+            className="wedding-event traditional-event-card"
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, amount: 0.25 }}
           >
             <span className="wedding-event-number">01</span>
-
             <div className="wedding-event-content">
-              <p className="wedding-event-label">The Joining of Families</p>
-
-              <h3>Traditional Engagement</h3>
-
-              <div className="traditional-main-details">
-                <div className="wedding-event-detail">
-                  <Clock3 size={20} strokeWidth={1.5} />
-                  <span>11:00 AM Prompt</span>
-                </div>
-
-                <div className="wedding-event-detail wedding-event-location">
-                  <MapPin size={20} strokeWidth={1.5} />
-
-                  <div>
-                    <strong>Lakehouse at Southshore</strong>
-                    <span>27151 E Lakeview Dr</span>
-                    <span>Aurora, CO 80016</span>
-                  </div>
+              <p className="wedding-event-label">The Venue</p>
+              <h3>Lakehouse at Southshore</h3>
+              <div className="wedding-event-detail">
+                <Clock3 size={18} strokeWidth={1.5} />
+                <span>11:00 AM Prompt</span>
+              </div>
+              <div className="wedding-event-detail wedding-event-location">
+                <MapPin size={18} strokeWidth={1.5} />
+                <div>
+                  <strong>Lakehouse at Southshore</strong>
+                  <span>27151 E Lakeview Dr</span>
+                  <span>Aurora, CO 80016</span>
                 </div>
               </div>
-
               <a
                 href={MAP_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="wedding-map-link"
               >
-                View directions
-                <ExternalLink size={15} />
+                View directions <ExternalLink size={15} />
               </a>
-            </div>
-
-            <div className="traditional-main-monogram" aria-hidden="true">
-              <Image
-                src="/images/pj-monogram.png"
-                alt=""
-                width={220}
-                height={220}
-                sizes="220px"
-              />
             </div>
           </motion.article>
 
-          <div className="traditional-secondary-grid">
-            <motion.article
-              className="wedding-event traditional-attire-card"
-              initial={{ opacity: 0, y: 45 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.25 }}
-            >
-              <span className="wedding-event-number">02</span>
-
-              <div className="wedding-event-content">
-                <p className="wedding-event-label">Attire</p>
-
-                <div className="traditional-card-icon">
-                  <Shirt size={30} strokeWidth={1.25} />
-                </div>
-
-                <h3>White African Wear or White Plain Kente</h3>
-
-                <p className="traditional-card-description">
-                  A refined celebration in white, honouring heritage, culture,
-                  and the joining of our families.
-                </p>
+          <motion.article
+            className="wedding-event traditional-event-card"
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <span className="wedding-event-number">02</span>
+            <div className="wedding-event-content">
+              <p className="wedding-event-label">Save The Date</p>
+              <h3>Friday, October 02, 2026</h3>
+              <div className="wedding-event-detail">
+                <CalendarDays size={18} strokeWidth={1.5} />
+                <span>Traditional Engagement</span>
               </div>
-            </motion.article>
-
-            <motion.article
-              className="wedding-event traditional-calendar-card"
-              initial={{ opacity: 0, y: 45 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.25 }}
-            >
-              <span className="wedding-event-number">03</span>
-
-              <div className="wedding-event-content">
-                <p className="wedding-event-label">Save The Date</p>
-
-                <div className="traditional-card-icon">
-                  <CalendarDays size={30} strokeWidth={1.25} />
-                </div>
-
-                <h3>Friday, October 02, 2026</h3>
-
-                <div className="traditional-save-details">
-                  <div className="wedding-event-detail">
-                    <Clock3 size={18} strokeWidth={1.5} />
-                    <span>11:00 AM Prompt</span>
-                  </div>
-
-                  <div className="wedding-event-detail wedding-event-location">
-                    <MapPin size={18} strokeWidth={1.5} />
-
-                    <div>
-                      <strong>Lakehouse at Southshore</strong>
-                      <span>Aurora, Colorado</span>
-                    </div>
-                  </div>
-                </div>
-
-                <a
-                  href={CALENDAR_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="wedding-map-link traditional-calendar-link"
-                >
-                  Add to calendar
-                  <ExternalLink size={15} />
-                </a>
+              <div className="wedding-event-detail">
+                <Clock3 size={18} strokeWidth={1.5} />
+                <span>11:00 AM Prompt</span>
               </div>
-            </motion.article>
-          </div>
+              <a
+                href={CALENDAR_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="wedding-map-link"
+              >
+                Add to calendar <ExternalLink size={15} />
+              </a>
+            </div>
+          </motion.article>
+
+          <motion.article
+            className="wedding-event traditional-event-card"
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <span className="wedding-event-number">03</span>
+            <div className="wedding-event-content">
+              <p className="wedding-event-label">Attire</p>
+              <h3>White African Wear or White Plain Kente</h3>
+              <div className="traditional-attire-icon">
+                <Shirt size={25} strokeWidth={1.3} />
+              </div>
+              <p className="traditional-attire-copy">
+                A celebration in white, honouring God, and the sacred joining of
+                two families in love and covenant.
+              </p>
+            </div>
+          </motion.article>
         </div>
       </div>
     </section>

@@ -6504,3 +6504,238 @@ textarea {
     transition: none;
   }
 }
+
+/* ===========================================
+   TRADITIONAL — WEDDING-MATCHED STRUCTURE
+=========================================== */
+.traditional::before { content: none !important; }
+
+.traditional {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.48), transparent 32%),
+    radial-gradient(circle at 88% 78%, rgba(199,154,69,.16), transparent 31%),
+    linear-gradient(180deg,#eadbc4 0%,#f2e7d5 50%,#ead8bc 100%);
+}
+
+.traditional .section-tag,
+.traditional .wedding-date-day,
+.traditional .wedding-date-display strong { color:#956a32; }
+
+.traditional .section-title { color:#2b1c15; }
+.traditional .wedding-introduction,
+.traditional .wedding-date-panel > p { color:#75675c; }
+
+.traditional-events {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:28px;
+}
+
+.traditional-event-card {
+  position:relative;
+  display:grid !important;
+  grid-template-columns:auto minmax(0,1fr) !important;
+  gap:22px !important;
+  min-height:500px !important;
+  padding:clamp(42px,4vw,58px) !important;
+  border:1px solid rgba(226,193,120,.18) !important;
+  background:
+    radial-gradient(circle at 90% 8%,rgba(226,193,120,.08),transparent 31%),
+    linear-gradient(145deg,#3a271d 0%,#2b1c15 100%) !important;
+  color:#f4ead8;
+  box-shadow:0 24px 60px rgba(58,39,29,.13);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+}
+
+.traditional-event-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 32px 72px rgba(58,39,29,.20);
+}
+
+.traditional-event-card .wedding-event-content {
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+}
+
+.traditional-event-card .wedding-event-number,
+.traditional-event-card .wedding-event-label,
+.traditional-event-card .wedding-event-detail svg { color:#e2c178; }
+
+.traditional-event-card h3 { color:#f4ead8; }
+.traditional-event-card .wedding-event-detail { color:rgba(244,234,216,.92); }
+.traditional-event-card .wedding-event-location strong { color:#f4ead8; }
+.traditional-event-card .wedding-event-location span,
+.traditional-attire-copy { color:#d7c7b8; }
+
+.traditional-event-card .wedding-map-link {
+  width:fit-content;
+  margin-top:auto;
+  color:#e2c178;
+  border-bottom-color:#e2c178;
+}
+
+.traditional-attire-icon {
+  width:58px;height:58px;display:grid;place-items:center;
+  margin:0 0 24px;border:1px solid rgba(226,193,120,.45);
+  border-radius:50%;color:#e2c178;
+}
+
+.traditional-attire-copy {
+  max-width:330px;margin:0;font-size:.92rem;line-height:1.8;
+}
+
+@media (max-width:1180px) {
+  .traditional-events { grid-template-columns:1fr !important; }
+  .traditional-event-card { min-height:0 !important; }
+}
+
+@media (max-width:600px) {
+  .traditional-event-card {
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    padding:50px 18px !important;
+  }
+}
+
+
+/* Traditional date card — match the three dark Traditional cards */
+.traditional .wedding-date-panel {
+  border: 1px solid rgba(226, 193, 120, 0.18);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(226, 193, 120, 0.08), transparent 31%),
+    linear-gradient(145deg, #3a271d 0%, #2b1c15 100%);
+  box-shadow: 0 24px 60px rgba(58, 39, 29, 0.13);
+}
+
+.traditional .wedding-date-day,
+.traditional .wedding-date-display strong {
+  color: #e2c178;
+}
+
+.traditional .wedding-date-display span {
+  color: #f4ead8;
+}
+
+.traditional .wedding-date-panel > p {
+  color: #d7c7b8;
+}
+
+/* ===========================================
+   TRADITIONAL — DARK DATE CARD + SUBTLE MOTION
+=========================================== */
+
+.traditional .wedding-date-panel {
+  position: relative;
+  overflow: hidden;
+
+  max-width: 850px;
+  margin: 0 auto 90px;
+  padding: 65px 40px;
+
+  border: 1px solid rgba(226, 193, 120, 0.18);
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(226, 193, 120, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #3a271d 0%,
+      #2b1c15 100%
+    );
+
+  box-shadow:
+    0 24px 60px rgba(58, 39, 29, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.traditional .wedding-date-panel:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 32px 72px rgba(58, 39, 29, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.traditional .wedding-date-day {
+  color: #e2c178;
+}
+
+.traditional .wedding-date-display span {
+  color: #f4ead8;
+}
+
+.traditional .wedding-date-display strong {
+  color: #e2c178;
+}
+
+.traditional .wedding-date-panel > p {
+  color: #d7c7b8;
+}
+
+.traditional .wedding-date-panel::after {
+  content: "";
+
+  position: absolute;
+  inset: -35% -55%;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      112deg,
+      transparent 38%,
+      rgba(255, 255, 255, 0.025) 44%,
+      rgba(226, 193, 120, 0.09) 50%,
+      rgba(255, 255, 255, 0.025) 56%,
+      transparent 62%
+    );
+
+  transform: translateX(-45%);
+  opacity: 0;
+
+  animation: traditionalDateSheen 9s ease-in-out infinite;
+}
+
+@keyframes traditionalDateSheen {
+  0%,
+  74%,
+  100% {
+    transform: translateX(-45%);
+    opacity: 0;
+  }
+
+  84% {
+    opacity: 0.65;
+  }
+
+  92% {
+    transform: translateX(45%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .traditional .wedding-date-panel {
+    margin-bottom: 60px;
+    padding: 45px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .traditional .wedding-date-panel,
+  .traditional .wedding-date-panel::after {
+    animation: none;
+    transition: none;
+  }
+
+  .traditional .wedding-date-panel:hover {
+    transform: none;
+  }
+}
