@@ -6739,3 +6739,83 @@ textarea {
     transform: none;
   }
 }
+
+/* ===========================================
+   TRADITIONAL — TWO LOWER CARDS
+   Venue + Attire only
+=========================================== */
+
+.traditional-events {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  max-width: 1040px;
+  margin-inline: auto;
+  gap: 32px;
+}
+
+.traditional-event-card {
+  min-height: 520px !important;
+}
+
+/* Calendar action now belongs to the main date card */
+.traditional-date-calendar-link {
+  position: relative;
+  z-index: 2;
+
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin: 28px auto 0;
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid #e2c178;
+
+  color: #e2c178;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+
+  transition:
+    gap var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.traditional-date-calendar-link:hover {
+  gap: 14px;
+  color: #f4ead8;
+  border-bottom-color: #f4ead8;
+}
+
+@media (max-width: 1180px) {
+  .traditional-events {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 940px;
+  }
+
+  .traditional-event-card {
+    min-height: 480px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .traditional-events {
+    grid-template-columns: 1fr !important;
+    max-width: 620px;
+  }
+
+  .traditional-event-card {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .traditional-date-calendar-link {
+    margin-top: 24px;
+    font-size: 0.66rem;
+    letter-spacing: 0.13rem;
+  }
+}

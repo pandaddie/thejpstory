@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  CalendarDays,
   Clock3,
   ExternalLink,
   MapPin,
@@ -47,6 +46,14 @@ export default function Traditional() {
             <span>2026</span>
           </div>
           <p>Aurora, Colorado</p>
+          <a
+            href={CALENDAR_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="traditional-date-calendar-link"
+          >
+            Add to calendar <ExternalLink size={15} />
+          </a>
         </motion.div>
 
         <div className="wedding-events traditional-events">
@@ -84,6 +91,8 @@ export default function Traditional() {
             </div>
           </motion.article>
 
+
+
           <motion.article
             className="wedding-event traditional-event-card"
             initial={{ opacity: 0, y: 45 }}
@@ -92,36 +101,6 @@ export default function Traditional() {
             viewport={{ once: true, amount: 0.25 }}
           >
             <span className="wedding-event-number">02</span>
-            <div className="wedding-event-content">
-              <p className="wedding-event-label">Save The Date</p>
-              <h3>Friday, October 02, 2026</h3>
-              <div className="wedding-event-detail">
-                <CalendarDays size={18} strokeWidth={1.5} />
-                <span>Traditional Engagement</span>
-              </div>
-              <div className="wedding-event-detail">
-                <Clock3 size={18} strokeWidth={1.5} />
-                <span>11:00 AM Prompt</span>
-              </div>
-              <a
-                href={CALENDAR_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="wedding-map-link"
-              >
-                Add to calendar <ExternalLink size={15} />
-              </a>
-            </div>
-          </motion.article>
-
-          <motion.article
-            className="wedding-event traditional-event-card"
-            initial={{ opacity: 0, y: 45 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.25 }}
-          >
-            <span className="wedding-event-number">03</span>
             <div className="wedding-event-content">
               <p className="wedding-event-label">Attire</p>
               <h3>White African Wear or White Plain Kente</h3>
