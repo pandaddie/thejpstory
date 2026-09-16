@@ -1,18 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Clock3,
-  ExternalLink,
-  MapPin,
-  Shirt,
-} from "lucide-react";
+import { Clock3, ExternalLink, MapPin, Shirt } from "lucide-react";
 
 const MAP_URL =
-  "https://www.google.com/maps/search/?api=1&query=Lakehouse+at+Southshore+27151+E+Lakeview+Dr+Aurora+CO+80016";
+  "https://www.google.com/maps/search/?api=1&query=Copperleaf+Clubhouse+4895+S+Tibet+St+Aurora+CO+80015";
 
 const CALENDAR_URL =
-  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Paul+%26+Jozzy+Traditional+Engagement&dates=20261002T170000Z/20261002T200000Z&details=Traditional+Engagement+of+Paul+and+Jozzy.&location=Lakehouse+at+Southshore%2C+27151+E+Lakeview+Dr%2C+Aurora%2C+CO+80016";
+  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Paul+%26+Jozzy+Traditional+Engagement&dates=20261003T170000Z/20261003T200000Z&details=Traditional+Engagement+of+Paul+and+Jozzy.&location=Copperleaf+Clubhouse%2C+4895+S.+Tibet+St.%2C+Aurora%2C+CO+80015";
 
 export default function Traditional() {
   return (
@@ -39,10 +34,10 @@ export default function Traditional() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="wedding-date-day">Friday</span>
+          <span className="wedding-date-day">Saturday</span>
           <div className="wedding-date-display">
             <span>October</span>
-            <strong>02</strong>
+            <strong>03</strong>
             <span>2026</span>
           </div>
           <p>Aurora, Colorado</p>
@@ -67,17 +62,17 @@ export default function Traditional() {
             <span className="wedding-event-number">01</span>
             <div className="wedding-event-content">
               <p className="wedding-event-label">The Venue</p>
-              <h3>Lakehouse at Southshore</h3>
+              <h3>Copperleaf Clubhouse</h3>
               <div className="wedding-event-detail">
                 <Clock3 size={18} strokeWidth={1.5} />
-                <span>11:00 AM Prompt</span>
+                <span>10:30 AM</span>
               </div>
               <div className="wedding-event-detail wedding-event-location">
                 <MapPin size={18} strokeWidth={1.5} />
                 <div>
-                  <strong>Lakehouse at Southshore</strong>
-                  <span>27151 E Lakeview Dr</span>
-                  <span>Aurora, CO 80016</span>
+                  <strong>Copperleaf Clubhouse</strong>
+                  <span>4895 S. Tibet St.</span>
+                  <span>Aurora, CO 80015</span>
                 </div>
               </div>
               <a
@@ -90,8 +85,6 @@ export default function Traditional() {
               </a>
             </div>
           </motion.article>
-
-
 
           <motion.article
             className="wedding-event traditional-event-card"
