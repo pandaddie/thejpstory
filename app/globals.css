@@ -494,7 +494,7 @@ section {
   overflow: hidden;
 
   background-image:
-    linear-gradient(rgba(252, 250, 246, 0.58), rgba(252, 250, 246, 0.58)),
+    linear-gradient(rgba(252, 250, 246, 0.78), rgba(252, 250, 246, 0.78)),
     url("/images/story/our-story.png");
 
   background-size: cover;
@@ -515,6 +515,12 @@ section {
 .story-copy {
   position: relative;
   z-index: 2;
+
+  padding: 35px 30px;
+
+  background: rgba(252, 250, 246, 0.38);
+  backdrop-filter: blur(2px);
+  border-radius: 4px;
 }
 
 .story-intro {
@@ -524,7 +530,10 @@ section {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2.3vw, 2.1rem);
   line-height: 1.45;
-  color: var(--text);
+  color: #211d19;
+  font-weight: 500;
+
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .story-text {
@@ -534,6 +543,8 @@ section {
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.95;
+
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
 }
 
 .story-signature {
@@ -562,7 +573,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 700px;
-    transform: translateX(90px);
+  transform: translateX(90px);
 }
 
 .story-image {
@@ -657,7 +668,7 @@ section {
 
   .story-images {
     min-height: 620px;
-      transform: translateX(0);
+    transform: translateX(0);
   }
 
   .story-image-large {
