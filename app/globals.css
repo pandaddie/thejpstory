@@ -492,7 +492,14 @@ section {
 .story {
   position: relative;
   overflow: hidden;
-  background: var(--background);
+
+  background-image:
+    linear-gradient(rgba(252, 250, 246, 0.58), rgba(252, 250, 246, 0.58)),
+    url("/images/story/our-story.png");
+
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
 }
 
 .story-container {
@@ -555,6 +562,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 700px;
+    transform: translateX(90px);
 }
 
 .story-image {
@@ -583,6 +591,8 @@ section {
 
   top: 0;
   right: 0;
+
+  opacity: 0.72;
 }
 
 .story-image-large::after {
@@ -647,12 +657,14 @@ section {
 
   .story-images {
     min-height: 620px;
+      transform: translateX(0);
   }
 
   .story-image-large {
     width: 88%;
     height: 560px;
     right: 0;
+    opacity: 0.82;
   }
 
   .story-monogram-image {
@@ -3226,15 +3238,7 @@ body {
 }
 
 /* STORY */
-.story {
-  background:
-    radial-gradient(
-      circle at 85% 12%,
-      rgba(199, 154, 75, 0.11),
-      transparent 26%
-    ),
-    linear-gradient(180deg, #fffdf9, #f8f0e5);
-}
+
 .story::before {
   content: "P  &  J";
   position: absolute;
