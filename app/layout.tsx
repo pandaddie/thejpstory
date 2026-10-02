@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The JP Story | Paul & Jozzy",
     description:
-      "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
+      "Join us as we celebrate our covenant. October 3, 2026. By Divine Design.",
     url: "https://thejpstory.com",
     siteName: "The JP Story",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The JP Story | Paul & Jozzy",
     description:
-      "Join us as we celebrate our wedding. October 3, 2026. By Divine Design.",
+      "Join us as we celebrate our covenant. October 3, 2026. By Divine Design.",
     images: ["/opengraph-image.png"],
   },
 };
